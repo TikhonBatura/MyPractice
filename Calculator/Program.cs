@@ -1,11 +1,11 @@
-﻿int enterNumber(string text) // функция для ввода числового значения пользователем
+﻿double enterNumber(string text) // функция для ввода числового значения пользователем
 {
     Console.Write($"{text}: ");
-    int result;
+    double result;
     while (true)
     {
         string Number = Console.ReadLine();
-        if (int.TryParse(Number, out result))
+        if (double.TryParse(Number, out result))
             return result;
 
         System.Console.WriteLine($"Error. {text}");
@@ -14,7 +14,7 @@
 }
 
 
-void Calculator (int a, int b)
+void Calculator (double a, double b)
 {
     bool done = false;
     while(!done)
@@ -26,26 +26,31 @@ void Calculator (int a, int b)
             switch (Operator)
             {
                 case "+":
+                    Console.Clear();
                     System.Console.WriteLine($"{a} {Operator} {b} = {a + b}");
                     done = true;
                     break;
 
                 case "-":
+                    Console.Clear();
                     System.Console.WriteLine($"{a} {Operator} {b} = {a - b}");
                     done = true;
                     break;
 
                 case "*":
+                    Console.Clear();
                     System.Console.WriteLine($"{a} {Operator} {b} = {a * b}");
                     done = true;
                     break;
 
                 case "/":
+                    Console.Clear();
                     System.Console.WriteLine($"{a} {Operator} {b} = {a / b}");
                     done = true;
                     break;
                 
                 default:
+                    Console.Clear();
                     System.Console.WriteLine("Input invalid operator");
                     break;
         }
@@ -53,9 +58,8 @@ void Calculator (int a, int b)
 }
 
 
-
-int a = enterNumber("Please enter first number: ");
-
-int b = enterNumber("Please enter second number: ");
+Console.Clear();
+double a = enterNumber("Please enter first number: ");
+double b = enterNumber("Please enter second number: ");
 
 Calculator(a, b);
